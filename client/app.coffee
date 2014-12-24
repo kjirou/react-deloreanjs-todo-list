@@ -10,7 +10,7 @@ exports.App = class App
 
   constructor: ->
     @deps = @constructor.createSingletons()
-    @_rootElement = React.createElement ScreenView,
+    @rootElement = React.createElement ScreenView,
       key: 'screen'
       # React Component で Flux.mixins.storeListener を使いたい場合は必須の設定
       dispatcher: @deps.Dispatcher
@@ -19,7 +19,7 @@ exports.App = class App
       deps: @deps
 
   renderTo: (container) =>
-    React.render @_rootElement, container
+    React.render @rootElement, container
 
   @createSingletons = ->
     todoListStore = new TodoListStore
