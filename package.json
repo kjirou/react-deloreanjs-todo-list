@@ -1,0 +1,55 @@
+{
+  "name": "react-deloreanjs-todo-list",
+  "description": "49-defenders ============",
+  "version": "0.0.0",
+  "author": "kjirou",
+  "bugs": {
+    "url": "https://github.com/kjirou/react-deloreanjs-todo-list/issues"
+  },
+  "dependencies": {
+    "bluebird": "2.4.2",
+    "body-parser": "1.8.1",
+    "coffee-script": "1.8.0",
+    "cookie-parser": "1.3.3",
+    "debug": "2.0.0",
+    "express": "4.9.0",
+    "jade": "1.6.0",
+    "lodash": "2.4.1",
+    "morgan": "1.3.0",
+    "react": "0.12.2",
+    "serve-favicon": "2.1.3",
+    "stylus": "0.49.3"
+  },
+  "devDependencies": {
+    "bower": "1.3.12",
+    "coffee-loader": "0.7.2",
+    "css-loader": "0.9.0",
+    "espower-coffee": "0.10.0",
+    "express-generator": "4.9.0",
+    "fixpack": "1.2.0",
+    "gulp": "3.8.10",
+    "gulp-webpack": "1.1.2",
+    "mocha": "2.1.0",
+    "nib": "1.0.4",
+    "node-dev": "2.6.0",
+    "power-assert": "0.10.0",
+    "style-loader": "0.8.2",
+    "stylus-loader": "0.5.0",
+    "webpack": "1.4.14"
+  },
+  "homepage": "https://github.com/kjirou/react-deloreanjs-todo-list",
+  "license": "MIT License",
+  "main": "app.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kjirou/react-deloreanjs-todo-list.git"
+  },
+  "scripts": {
+    "build": "gulp webpack",
+    "dev": "node-dev ./bin/www",
+    "start": "node ./bin/www",
+    "test": "mocha",
+    "watch": "webpack --progress --colors --watch"
+  }
+}
