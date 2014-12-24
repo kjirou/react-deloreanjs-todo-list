@@ -15,8 +15,8 @@ React.createClass
       'div'
       { className: 'ui page grid' }
       DOM.div { className: 'ul column' }, [
-        DOM.h1 null, 'React - DeLorean.js Todo List'
-        DOM.div { className: 'ui divider' }, ''
+        DOM.h1 { key: 'screen-h1' }, 'React - DeLorean.js Todo List'
+        DOM.div { key: 'screen-divider', className: 'ui divider' }
         React.createElement TodoFieldView, key: 'todo-field'
         React.createElement TodoListView, key: 'todo-list'
       ]
