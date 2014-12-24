@@ -13,3 +13,8 @@ describe 'client/app module', ->
       assert app instanceof App
       assert _.size(app.deps) > 0
       assert app._rootElement
+
+    it 'createSingletons', ->
+      objs = App.createSingletons()
+      assert 'todoListStore' of objs
+      assert 'ActionCreator' of objs

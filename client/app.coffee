@@ -9,19 +9,31 @@ dispatcher = require 'client/dispatcher'
 exports.App = class App
 
   constructor: ->
-    @deps = @constructor.createDependencies()
+    @deps = @constructor.createSingletons()
     @_rootElement = React.createElement ScreenView,
       key: 'screen'
-      # 唯一のStore/Dispatcher/Action群は、ルートのビューから伝搬させている
-      # 他に方法がわからない..
+      # React Component で Flux.mixins.storeListener を使いたい場合は必須の設定
+      dispatcher: @deps.Dispatcher
+      # 他の唯一のインスタンスもトップから伝搬させる
+      # オレオレだけど、副作用を発生しないようにする場合、他に方法がわからない！
       deps: @deps
 
   renderTo: (container) =>
     React.render @_rootElement, container
 
-  @createDependencies = ->
+  @createSingletons = ->
     todoListStore = new TodoListStore
+
+    Dispatcher = dispatcher.create { todoListStore }
+
+    # DeLorean.js 的には、ActionCreators は必須ではないとのこと。
+    # あと、README には Actions って書いてあるのは間違いか？
+    #（個別のドキュメントでは ActionCreators となっている）
+    ActionCreator =
+      addTodo: (todo) -> Dispatcher.addTodo todo
+
     {
       todoListStore: todoListStore
-      Dispatcher: dispatcher.create { todoListStore }
+      Dispatcher: Dispatcher
+      ActionCreator: ActionCreator
     }

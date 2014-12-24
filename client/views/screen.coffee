@@ -1,4 +1,4 @@
-_ = require 'lodash'
+{Flux} = require 'delorean'
 React = require 'react'
 {DOM} = React
 
@@ -17,7 +17,11 @@ React.createClass
       DOM.div { className: 'ul column' }, [
         DOM.h1 { key: 'screen-h1' }, 'React - DeLorean.js Todo List'
         DOM.div { key: 'screen-divider', className: 'ui divider' }
-        React.createElement TodoFieldView, key: 'todo-field'
-        React.createElement TodoListView, key: 'todo-list'
+        React.createElement TodoFieldView,
+          key: 'todo-field'
+          deps: @props.deps
+        React.createElement TodoListView,
+          key: 'todo-list'
+          deps: @props.deps
       ]
     )

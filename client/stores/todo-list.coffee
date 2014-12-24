@@ -3,10 +3,11 @@
 
 exports.TodoListStore =
 Flux.createStore
-  todos: [],
+  todos: []
 
   addTodo: (todo) ->
-    @todo.push todo
+    if todo isnt ''
+      @todos.push todo
     @emit 'change'
 
   actions:
