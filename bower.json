@@ -1,0 +1,10 @@
+{
+  "name": "react-deloreanjs-todo-list",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kjirou/react-deloreanjs-todo-list",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "semantic-ui": "~1.4.1"
+  }
+}

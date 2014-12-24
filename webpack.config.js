@@ -34,15 +34,11 @@ module.exports = {
   resolve: {
     root: [
       ROOT
-      //pathModule.join(__dirname, 'bower_components')
     ],
     extensions: ['', '.coffee', '.js']
   },
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendor', PUBLIC_BUILD_ROOT + '/vendor.bundle.js')
-    //new webpack.ResolverPlugin(
-    //  new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
-    //)
   ]
 };
