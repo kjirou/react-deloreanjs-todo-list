@@ -39,7 +39,7 @@
     "webpack": "1.4.14"
   },
   "homepage": "https://github.com/kjirou/react-deloreanjs-todo-list",
-  "license": "MIT License",
+  "license": "http://kjirou.mit-license.org/",
   "main": "app.js",
   "private": true,
   "repository": {
